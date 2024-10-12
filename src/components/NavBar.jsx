@@ -29,7 +29,7 @@ export const NavBar = () => {
             </li>
           </ul>
         </div>
-        <NavLink to='/carrito'>
+        <NavLink to="/carrito">
           <Badge badgeContent={4} color="primary">
             <ShoppingCart />
           </Badge>
