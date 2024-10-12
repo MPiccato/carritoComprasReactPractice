@@ -2,7 +2,18 @@ import { useState } from "react";
 import './../styles/CardComponents.css'
 
 export const CartComponent = ({ image, title, description, price }) => {
+  
   const [added, setAdded] = useState(false);
+
+  const addProduct =()=> {
+    setAdded(true)
+  }
+  const removeProduct =()=> {
+    setAdded(false)
+  }
+
+
+
   return (
     <div className="card">
       <img src={image} alt={title} className="card-img" />
@@ -12,11 +23,11 @@ export const CartComponent = ({ image, title, description, price }) => {
         <p className="card-price">{price}</p>
 
         {added ? (
-          <button type="button" className="remove-button">
+          <button type="button" className="remove-button" onClick={removeProduct}>
             Quitar del carrito
           </button>
         ) : (
-          <button type="button" className="add-button">
+          <button type="button" className="add-button" onClick={addProduct}>
             Agregar al carrito
           </button>
         )}
