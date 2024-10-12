@@ -9,6 +9,21 @@ export const NavBar = () => {
         <NavLink to="/" className="navbar-brand" href="#">
           Carrito de Compras
         </NavLink>
+       
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink to="/" className="nav-link active" aria-current="page">
+                Productos
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <NavLink  to="/carrito">
+          <Badge badgeContent={4} color="primary">
+            <ShoppingCart />
+          </Badge>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,20 +35,6 @@ export const NavBar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink to="/" className="nav-link active" aria-current="page">
-                Productos
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <NavLink to="/carrito">
-          <Badge badgeContent={4} color="primary">
-            <ShoppingCart />
-          </Badge>
-        </NavLink>
       </div>
     </nav>
   );

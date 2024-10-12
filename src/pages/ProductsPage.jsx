@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { CartComponent } from "../components/CartComponent";
 
 export const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,14 @@ export const ProductsPage = () => {
     <>
       <h1>Productos</h1>
       <hr />
+      {products.map(producto => (
+        <CartComponent key={producto.id}
+          title={producto.title}
+          image={producto.image}
+          description={producto.description}
+          price={producto.price}
+        />
+      ))}
     </>
   );
 };
